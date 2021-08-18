@@ -1,3 +1,8 @@
+<%# para avisarmos ao simple_form que queremos criar "uma review de um certo restaurante", 
+    (ao inves de apenas criar "uma review", precisamos desse [@restaurant, @review]. Isso
+    porque o #create necessita do id do restaurante e o mesmo nao sera um campo do form.
+    Fora isso, o form segue como qualquer outro
+%>
 <%= simple_form_for [@restaurant, @review] do |f| %>
   <%= f.input :rating %>
   <%= f.input :content %>
