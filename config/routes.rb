@@ -11,8 +11,12 @@ Rails.application.routes.draw do
     member do
       get :chef
     end
+    
+    # - querer rotas sobre um modelo relacionado a um restaurante especifico
+    resources :reviews, only: [:new, :create]
   end
 
-
+  resources :reviews, only: [:destroy]
+  
   root to: 'restaurants#index'
 end
